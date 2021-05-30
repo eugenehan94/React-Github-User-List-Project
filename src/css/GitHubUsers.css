@@ -1,0 +1,30 @@
+img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.flex-row-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-item {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  width: 20%;
+  background-color: rgb(245, 245, 220);
+}
+.flex-row-item:hover {
+  background-color: rgb(128, 128, 114);
+}
+
+.flex-row-item p {
+  margin: 0;
+  margin-bottom: 10px;
+}

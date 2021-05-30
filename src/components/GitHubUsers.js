@@ -1,13 +1,20 @@
 import React from "react";
-
+import "../css/GitHubUsers.css";
+import { FaGithub } from "react-icons/fa";
 const GitHubUsers = ({ users }) => {
   return (
-    <div>
-      <h2>GitHub Users</h2>
+    <div className="flex-row-container" style={{ border: "1px solid green" }}>
       {users.map((user) => {
         return (
-          <div>
+          <div className="flex-row-item" key={user.id}>
             <img src={user.avatar_url} alt=""></img>
+            <p>{user.login}</p>
+            <a href={user.html_url} target="_blank">
+              <FaGithub size="30px" />
+            </a>
+            <div>
+              <button>Remove</button>
+            </div>
           </div>
         );
       })}

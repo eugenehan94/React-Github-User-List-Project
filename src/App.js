@@ -28,6 +28,11 @@ function App() {
     fetchUsers();
   }, []);
 
+  const removeUser = (id) => {
+    let newList = users.filter((user) => user.id !== user);
+    setUsers(newList);
+  };
+
   if (loading) {
     return (
       <div>
