@@ -1,9 +1,9 @@
 import React from "react";
 import "../css/GitHubUsers.css";
 import { FaGithub } from "react-icons/fa";
-const GitHubUsers = ({ users }) => {
+const GitHubUsers = ({ users, removeUser, id }) => {
   return (
-    <div className="flex-row-container" style={{ border: "1px solid green" }}>
+    <div className="flex-row-container">
       {users.map((user) => {
         return (
           <div className="flex-row-item" key={user.id}>
@@ -13,7 +13,9 @@ const GitHubUsers = ({ users }) => {
               <FaGithub size="30px" />
             </a>
             <div>
-              <button>Remove</button>
+              <button className="btn" onClick={() => removeUser(user.id)}>
+                Remove
+              </button>
             </div>
           </div>
         );

@@ -4,11 +4,18 @@ import { useState, useEffect } from "react";
 import Loading from "./components/Loading";
 import GitHubUsers from "./components/GitHubUsers";
 
+import "./css/App.css";
+
 const url = "https://api.github.com/users";
 
 function App() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const removeUser = (id) => {
+    const newList = users.filter((user) => user.id !== id);
+    setUsers(newList);
+  };
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -28,11 +35,6 @@ function App() {
     fetchUsers();
   }, []);
 
-  const removeUser = (id) => {
-    let newList = users.filter((user) => user.id !== user);
-    setUsers(newList);
-  };
-
   if (loading) {
     return (
       <div>
@@ -43,7 +45,7 @@ function App() {
   return (
     <div>
       <h1>GitHub Users List</h1>
-      <GitHubUsers users={users} />
+      <GitHubUsers key={users.id} users={users} removeUser={removeUser} />
     </div>
   );
 }
