@@ -36,3 +36,11 @@ img {
 .btn:hover {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 480px) {
+  .flex-row-item {
+    margin: 1rem;
+    padding: 1rem;
+    width: 40%;
+  }
+}

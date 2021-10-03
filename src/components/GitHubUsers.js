@@ -9,7 +9,7 @@ const GitHubUsers = ({ users, removeUser, id }) => {
           <div className="flex-row-item" key={user.id}>
             <img src={user.avatar_url} alt=""></img>
             <p>{user.login}</p>
-            <a href={user.html_url} target="_blank">
+            <a href={user.html_url} target="_blank" rel="noreferrer">
               <FaGithub size="30px" />
             </a>
             <div>

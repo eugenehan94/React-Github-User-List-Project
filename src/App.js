@@ -24,7 +24,6 @@ function App() {
       const users = await response.json();
       setUsers(users);
       setLoading(false);
-      console.log(users);
     } catch (error) {
       setLoading(false);
       console.log(error);
